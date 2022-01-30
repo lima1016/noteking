@@ -1,10 +1,8 @@
 package com.project.noteking.web.board.service;
 
-import com.project.noteking.web.board.dao.BoardDao;
+import com.project.noteking.web.board.repository.BoardRepository;
 import com.project.noteking.web.board.domain.Board;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -13,7 +11,7 @@ import java.util.List;
 public class BoardServiceImpl implements BoardService{
 
   @Resource
-  BoardDao boardDao;
+  BoardRepository boardDao;
 
 
   @Override
