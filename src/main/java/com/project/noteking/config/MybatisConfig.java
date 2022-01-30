@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import javax.sql.DataSource;
 
 
-@MapperScan("com.project.noteking.web.*.dao")
+@MapperScan("com.project.noteking.web.*.repository")
 @Configuration
 public class MybatisConfig {
 

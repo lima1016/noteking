@@ -1,5 +1,6 @@
 package com.project.noteking.web.board.domain;
 
+import com.project.noteking.web.member.domain.Member;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
@@ -22,4 +23,5 @@ public class Board {
   @ApiModelProperty(notes = "작성 날짜", example = "DATE")
   private String date;
 
+  private Member member;
 }
