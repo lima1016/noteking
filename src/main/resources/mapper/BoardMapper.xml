@@ -3,10 +3,18 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.project.noteking.web.board.dao.BoardDao">
+<mapper namespace="com.project.noteking.web.board.repository.BoardRepository">
 
     <select id="findAll" resultType="Board">
-        SELECT * FROM tb_board
+        SELECT
+        b.board_id
+        , b.user_id
+        , b.title
+        , b.date
+        , u.nick_name
+        FROM tb_board b
+        LEFT JOIN tb_user u on b.user_id = u.user_id
+        ORDER BY b.date DESC
     </select>
 
 </mapper>
