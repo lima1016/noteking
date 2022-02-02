@@ -9,4 +9,6 @@ import java.util.List;
 public interface BoardService {
 
   List<Board> findAll();
+
+  void insert(Board board);
 }
