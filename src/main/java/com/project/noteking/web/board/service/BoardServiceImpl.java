@@ -18,4 +18,9 @@ public class BoardServiceImpl implements BoardService{
   public List<Board> findAll() {
     return boardDao.findAll();
   }
+
+  @Override
+  public void insert(Board board) {
+
+  }
 }
