@@ -22,7 +22,6 @@ public class BoardController {
 
   @Resource
   private BoardService boardService;
-  private final FileWrite fileWrite  = new FileWrite();
 
   public BoardController(ServletContext sc) {
     FileWrite.uploadDir = sc.getRealPath("/upload/board");
@@ -37,6 +36,7 @@ public class BoardController {
   @ApiOperation(value = "게시판 등록", notes = "")
   @PostMapping("insert")
   public String insertBoard(Board board, MultipartFile file) throws Exception {
+    FileWrite fileWrite = new FileWrite();
     board.setImg(fileWrite.writeFile(file));
     boardService.insert(board);
     return "list";
