@@ -22,23 +22,23 @@ public class BoardController {
 
   @Resource
   private BoardService boardService;
-  private final FileWrite fileWrite  = new FileWrite();
 
-  public BoardController(ServletContext sc) {
-    FileWrite.uploadDir = sc.getRealPath("/upload/board");
-  }
+//  public BoardController(ServletContext sc) {
+//    FileWrite.uploadDir = sc.getRealPath("/upload/board");
+//  }
 
-  @ApiOperation(value = "게시판 목록", notes = "board_id, user_id, title, date, name(Member), nick_name(Member)")
+  @ApiOperation(value = "게시판 목록")
   @GetMapping("list")
   public List<Board> selectList() {
     return boardService.findAll();
   }
 
-  @ApiOperation(value = "게시판 등록", notes = "")
-  @PostMapping("insert")
-  public String insertBoard(Board board, MultipartFile file) throws Exception {
-    board.setImg(fileWrite.writeFile(file));
-    boardService.insert(board);
-    return "list";
-  }
+//  @ApiOperation(value = "게시판 등록")
+//  @PostMapping("insert")
+//  public String insertBoard(Board board, MultipartFile file) throws Exception {
+//    FileWrite fileWrite = new FileWrite();
+//    board.setImg(fileWrite.writeFile(file));
+//    boardService.insert(board);
+//    return "list";
+//  }
 }
