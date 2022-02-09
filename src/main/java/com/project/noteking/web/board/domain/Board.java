@@ -2,11 +2,15 @@ package com.project.noteking.web.board.domain;
 
 import com.project.noteking.web.member.domain.Member;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.sql.Date;
 
 @Data
+@Builder
 public class Board {
   @ApiModelProperty(notes = "게시물 번호")
   private int board_id;
