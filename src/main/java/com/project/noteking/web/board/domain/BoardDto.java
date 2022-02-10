@@ -1,5 +1,6 @@
 package com.project.noteking.web.board.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.project.noteking.web.member.domain.Member;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
@@ -7,16 +8,11 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.sql.Date;
-
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Board {
-  @ApiModelProperty(notes = "게시물 번호")
-  private int board_id;
-
+public class BoardDto {
   @ApiModelProperty(notes = "회원 번호")
   private int user_id;
 
@@ -26,15 +22,4 @@ public class Board {
   @ApiModelProperty(notes = "글 내용")
   private String note;
 
-  @ApiModelProperty(notes = "사진")
-  private String img;
-
-  @ApiModelProperty(notes = "수정 날짜")
-  private String edit_date;
-
-  @ApiModelProperty(notes = "작성 날짜")
-  private String date;
-
-  @ApiModelProperty(notes = "맴버 정보")
-  private Member member;
 }

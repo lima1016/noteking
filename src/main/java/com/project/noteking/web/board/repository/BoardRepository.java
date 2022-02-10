@@ -8,4 +8,6 @@ import java.util.List;
 @Repository
 public interface BoardRepository {
   List<Board> findAll();
+
+  void insert(Board board);
 }

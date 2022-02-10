@@ -37,4 +37,21 @@
         ORDER BY b.date DESC
     </select>
 
+    <insert id="insert" parameterType="Board">
+        INSERT INTO tb_board
+        (
+         user_id
+        , title
+        , note
+        , img
+        )
+        VALUES
+        (
+        #{user_id}
+        , #{title}
+        , #{note}
+        , #{img}
+        )
+    </insert>
+
 </mapper>
