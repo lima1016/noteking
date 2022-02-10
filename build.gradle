@@ -36,6 +36,8 @@ dependencies {
     implementation group: 'org.bgee.log4jdbc-log4j2', name: 'log4jdbc-log4j2-jdbc4.1', version: '1.16'
     // https://mvnrepository.com/artifact/org.mybatis.spring.boot/mybatis-spring-boot-starter
     implementation group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: '2.2.0'
+    // 파일 업로드 처리 (Apache Commons Fileupload)
+    implementation group: 'commons-fileupload', name: 'commons-fileupload', version: '1.4'
 
 }
 

@@ -38,7 +38,9 @@
     </select>
 
     <insert id="insert" parameterType="Board">
-        user_id
+        INSERT INTO tb_board
+        (
+         user_id
         , title
         , note
         , img
