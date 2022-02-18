@@ -16,7 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.annotation.Resource;
 import java.util.List;
 
-@RestController("")
+@RestController("board")
 @Api("Board Controller API")
 @SessionAttributes("loginUser")
 public class BoardController {
