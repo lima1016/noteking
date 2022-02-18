@@ -14,7 +14,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class BoardDto {
   @ApiModelProperty(notes = "회원 번호")
-  private int user_id;
+  @JsonProperty("user_id")
+  private int userId;
 
   @ApiModelProperty(notes = "글 제목")
   private String title;

@@ -1,5 +1,6 @@
 package com.project.noteking.web.board.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.project.noteking.web.member.domain.Member;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
@@ -7,18 +8,22 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.sql.Date;
 
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Board {
+public class Board implements Serializable {
+
   @ApiModelProperty(notes = "게시물 번호")
-  private int board_id;
+  @JsonProperty("board_id")
+  private int boardId;
 
   @ApiModelProperty(notes = "회원 번호")
-  private int user_id;
+  @JsonProperty("user_id")
+  private int userId;
 
   @ApiModelProperty(notes = "글 제목")
   private String title;
@@ -30,7 +35,8 @@ public class Board {
   private String img;
 
   @ApiModelProperty(notes = "수정 날짜")
-  private String edit_date;
+  @JsonProperty("edit_date")
+  private String editDate;
 
   @ApiModelProperty(notes = "작성 날짜")
   private String date;
