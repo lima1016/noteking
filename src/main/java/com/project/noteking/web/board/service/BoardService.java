@@ -1,8 +1,8 @@
 package com.project.noteking.web.board.service;
 
-import com.project.noteking.web.board.domain.Board;
+import com.project.noteking.web.board.model.Board;
+import com.project.noteking.web.board.model.BoardDto;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -13,4 +13,5 @@ public interface BoardService {
 
   void insert(Board board);
 
+  Board findBy(int boardId);
 }

@@ -1,6 +1,6 @@
 package com.project.noteking.web.board.repository;
 
-import com.project.noteking.web.board.domain.Board;
+import com.project.noteking.web.board.model.Board;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -10,4 +10,6 @@ public interface BoardRepository {
   List<Board> findAll();
 
   void insert(Board board);
+
+  Board findBy(int boardId);
 }

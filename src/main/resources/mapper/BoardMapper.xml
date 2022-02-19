@@ -54,4 +54,18 @@
         )
     </insert>
 
+    <select id="findBy" parameterType="int" resultType="Board" >
+        SELECT
+        b.user_id
+        , b.title
+        , b.note
+        , b.img
+        , b.edit_date
+        , b.date
+        , u.nick_name
+        FROM tb_board b
+        LEFT JOIN tb_user u ON b.user_id = u.user_id
+        WHERE b.board_id = ${boardId}
+    </select>
+
 </mapper>

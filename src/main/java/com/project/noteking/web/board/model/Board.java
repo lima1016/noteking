@@ -1,7 +1,7 @@
-package com.project.noteking.web.board.domain;
+package com.project.noteking.web.board.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.project.noteking.web.member.domain.Member;
+import com.project.noteking.web.member.model.Member;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +9,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
-import java.sql.Date;
 
 @Data
 @Builder
