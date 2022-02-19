@@ -1,8 +1,7 @@
 package com.project.noteking.web.board.controller;
 
-import com.project.noteking.web.board.domain.Board;
-import com.project.noteking.web.board.domain.BoardDetailDto;
-import com.project.noteking.web.board.domain.BoardDto;
+import com.project.noteking.web.board.model.Board;
+import com.project.noteking.web.board.model.BoardDto;
 import com.project.noteking.web.board.service.BoardService;
 import com.project.noteking.web.file.FileWriteService;
 import io.swagger.annotations.Api;
@@ -52,7 +51,7 @@ public class BoardController {
 
   @ApiOperation(value="게시판 디테일")
   @GetMapping("detail")
-  public BoardDetailDto detailBoard() {
-    return null;
+  public Board detailBoard(int boardId) {
+    return boardService.findBy(boardId);
   }
 }

@@ -1,6 +1,6 @@
 package com.project.noteking.web.member.service;
 
-import com.project.noteking.web.member.domain.MemberDto;
+import com.project.noteking.web.member.model.MemberSignUpDto;
 import com.project.noteking.web.member.repository.MemberRepository;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +13,7 @@ public class MemberServiceImpl implements MemberService{
   MemberRepository memberRepository;
 
   @Override
-  public void insertMember(MemberDto memberDto) {
+  public void insertMember(MemberSignUpDto memberDto) {
     memberRepository.insertMember(memberDto);
   }
 }

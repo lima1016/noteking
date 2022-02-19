@@ -5,7 +5,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.project.noteking.web.member.repository.MemberRepository">
 
-    <insert id="insertMember" parameterType="MemberDto">
+    <insert id="insertMember" parameterType="MemberSignUpDto">
         INSERT INTO tb_user
         (
          name

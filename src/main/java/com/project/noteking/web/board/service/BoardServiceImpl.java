@@ -1,7 +1,7 @@
 package com.project.noteking.web.board.service;
 
 import com.project.noteking.web.board.repository.BoardRepository;
-import com.project.noteking.web.board.domain.Board;
+import com.project.noteking.web.board.model.Board;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -11,16 +11,21 @@ import java.util.List;
 public class BoardServiceImpl implements BoardService{
 
   @Resource
-  BoardRepository boardDao;
+  BoardRepository boardRepository;
 
 
   @Override
   public List<Board> findAll() {
-    return boardDao.findAll();
+    return boardRepository.findAll();
   }
 
   @Override
   public void insert(Board board) {
-    boardDao.insert(board);
+    boardRepository.insert(board);
+  }
+
+  @Override
+  public Board findBy(int boardId) {
+    return boardRepository.findBy(boardId);
   }
 }

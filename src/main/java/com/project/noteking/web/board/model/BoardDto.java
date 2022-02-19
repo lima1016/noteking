@@ -1,7 +1,6 @@
-package com.project.noteking.web.board.domain;
+package com.project.noteking.web.board.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.project.noteking.web.member.domain.Member;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

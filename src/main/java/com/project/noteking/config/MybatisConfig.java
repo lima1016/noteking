@@ -20,7 +20,7 @@ public class MybatisConfig {
 
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
         sqlSessionFactoryBean.setDataSource(dataSource);
-        sqlSessionFactoryBean.setTypeAliasesPackage("com.project.noteking.web.*.domain");
+        sqlSessionFactoryBean.setTypeAliasesPackage("com.project.noteking.web.*.model");
         sqlSessionFactoryBean.setMapperLocations(
                 appCtx.getResources("classpath:mapper/*.xml"));
 
