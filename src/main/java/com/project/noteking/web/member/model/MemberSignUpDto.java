@@ -14,11 +14,14 @@ import lombok.NoArgsConstructor;
 public class MemberSignUpDto {
   @ApiModelProperty(notes = "유저이름")
   private String name;
+
   @ApiModelProperty(notes = "유저 별명")
   @JsonProperty("nick_name")
   private String nickName;
+
   @ApiModelProperty(notes = "이메일(로그인시)")
   private String email;
+
   @ApiModelProperty(notes = "비밀번호")
   private String password;
 }

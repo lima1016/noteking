@@ -22,4 +22,11 @@
         )
     </insert>
 
+    <select id="findByIdPassword" parameterType="map" resultType="Member">
+        SELECT
+        *
+        FROM tb_user
+          WHERE email = #{email} and password = md5(#{password})
+
+    </select>
 </mapper>
