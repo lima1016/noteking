@@ -1,5 +1,6 @@
 package com.project.noteking.web.board.service;
 
+import com.project.noteking.web.board.model.BoardUpdateDto;
 import com.project.noteking.web.board.repository.BoardRepository;
 import com.project.noteking.web.board.model.Board;
 import org.springframework.stereotype.Service;
@@ -27,5 +28,10 @@ public class BoardServiceImpl implements BoardService{
   @Override
   public Board findBy(int boardId) {
     return boardRepository.findBy(boardId);
+  }
+
+  @Override
+  public void update(BoardUpdateDto boardUpdateDto) {
+    boardRepository.update(boardUpdateDto);
   }
 }

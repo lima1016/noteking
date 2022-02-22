@@ -2,6 +2,7 @@ package com.project.noteking.web.board.controller;
 
 import com.project.noteking.web.board.model.Board;
 import com.project.noteking.web.board.model.BoardDto;
+import com.project.noteking.web.board.model.BoardUpdateDto;
 import com.project.noteking.web.board.service.BoardService;
 import com.project.noteking.web.file.FileWriteService;
 import io.swagger.annotations.Api;
@@ -51,5 +52,11 @@ public class BoardController {
   @GetMapping("detail")
   public Board detailBoard(int boardId) {
     return boardService.findBy(boardId);
+  }
+
+  @ApiOperation(value = "게시판 업데이트")
+  @PostMapping("update")
+  public void updateBoard(BoardUpdateDto boardUpdateDto) {
+    boardService.update(boardUpdateDto);
   }
 }

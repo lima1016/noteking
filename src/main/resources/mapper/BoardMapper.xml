@@ -55,17 +55,30 @@
     </insert>
 
     <select id="findBy" parameterType="int" resultType="Board" >
-        SELECT
-        b.user_id
-        , b.title
-        , b.note
-        , b.img
-        , b.edit_date
-        , b.date
-        , u.nick_name
+        SELECT b.user_id
+             , b.title
+             , b.note
+             , b.img
+             , b.edit_date
+             , b.date
+             , u.nick_name
         FROM tb_board b
-        LEFT JOIN tb_user u ON b.user_id = u.user_id
+                 LEFT JOIN tb_user u ON b.user_id = u.user_id
         WHERE b.board_id = ${boardId}
     </select>
+
+    <update id="update" parameterType="BoardUpdateDto">
+        UPDATE tb_board
+        <set>
+            <if test="title !=null">title = #{title}</if>
+            ,
+            <if test="note !=null">note = #{note}</if>
+            ,
+            <if test="img !=''">img = #{img}</if>
+            ,
+            <if test="editDate !=''">edit_date = now()</if>
+        </set>
+        WHERE board_id = #{boardId} AND user_id = #{userId}
+    </update>
 
 </mapper>
