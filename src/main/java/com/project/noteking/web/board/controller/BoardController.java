@@ -7,6 +7,9 @@ import com.project.noteking.web.board.service.BoardService;
 import com.project.noteking.web.file.FileWriteService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -17,6 +20,7 @@ import java.util.List;
 @RequestMapping("board")
 @Api("Board Controller API")
 @SessionAttributes("loginUser")
+@Slf4j
 public class BoardController {
 
   @Resource
@@ -26,6 +30,7 @@ public class BoardController {
   private FileWriteService fileWriteService;
 
   public String uploadDir;
+  private Logger logger = LoggerFactory.getLogger(this.getClass());
 
   @ApiOperation(value = "게시판 목록")
   @GetMapping("list")
@@ -36,7 +41,6 @@ public class BoardController {
   @ApiOperation(value = "게시판 등록")
   @PostMapping("insert")
   public BoardDto insertBoard(BoardDto boardDto, MultipartFile file) throws Exception {
-
     boardService.insert(
         Board.builder()
             .userId(boardDto.getUserId())
